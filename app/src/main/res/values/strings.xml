@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YahtzeeBase</string>
+    <string name="dice1">First Dice</string>
+    <string name="dice2">Second Dice</string>
+    <string name="dice3">Third Dice</string>
+    <string name="dice4">Fourth Dice</string>
+    <string name="dice5">Fifth Dice</string>
+    <string name="btnRoll">Roll</string>
+</resources>
