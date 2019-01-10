@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -77,6 +78,7 @@ int rollcount=0;
             int result=(int)dice.get(x).getTag();
             result--;
             values[result]++;
+            Arrays.sort(values);
         }
         Toast.makeText(this,"Ones: "+values[0],Toast.LENGTH_SHORT).show();
     }
