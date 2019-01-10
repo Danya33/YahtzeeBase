@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -48,8 +49,10 @@ private Random rnd=new Random();
     public void rollDice(ArrayList<ImageView> d){
         for (int x=0;x<d.size();x++){
             int value=rnd.nextInt(6);
+            d.get(x).setTag(value+1);
             d.get(x).setImageResource(diceImage[value]);
         }
+        checkDice();
     }
 
     public void diceClick(View view) {
@@ -59,5 +62,15 @@ private Random rnd=new Random();
         }else{
             d.setImageAlpha(255);
         }
+    }
+
+    public void checkDice(){
+        int[] values={0,0,0,0,0,0};
+        for (int x=0;x<dice.size();x++){
+            int result=(int)dice.get(x).getTag();
+            result--;
+            values[result]++;
+        }
+        Toast.makeText(this,"Ones: "+values[0],Toast.LENGTH_SHORT).show();
     }
 }
