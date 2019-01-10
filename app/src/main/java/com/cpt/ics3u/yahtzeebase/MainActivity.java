@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 private ArrayList<ImageView> dice;
 private int[] diceImage;
 private Random rnd=new Random();
-int rollcount=0;
+private int rollcount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
