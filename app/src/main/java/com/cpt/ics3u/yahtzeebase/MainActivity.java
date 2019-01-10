@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 private ArrayList<ImageView> dice;
 private int[] diceImage;
 private Random rnd=new Random();
+int rollcount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,12 @@ private Random rnd=new Random();
             d.get(x).setTag(value+1);
             d.get(x).setImageResource(diceImage[value]);
         }
-        checkDice();
+        rollcount++;
+        if (rollcount==3) {
+            checkDice();
+            Button rollButton=findViewById(R.id.btnRoll);
+            rollButton.setEnabled(false);
+        }
     }
 
     public void diceClick(View view) {
